@@ -96,7 +96,7 @@ python plot1.py
 No segundo terminal:
 
 ```bash
-python plot1.py
+python plot2.py
 ```
 
 

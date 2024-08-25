@@ -88,7 +88,7 @@ pip install pandas matplotlib
 #### Execute o script Python para plotar o gráfico:
 
 ```bash
-python plot.py
+python plot.ipynb
 ```
 
 

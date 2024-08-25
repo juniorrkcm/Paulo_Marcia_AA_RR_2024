@@ -85,10 +85,18 @@ Instale o Pandas e Matplotlib:
 pip install pandas matplotlib
 ```
 
-#### Execute o script Python para plotar o gráfico:
+#### Abra dois terminais e execute os scripts em Python para plotar o gráficos:
+
+No primeiro terminal:
 
 ```bash
-python plot.ipynb
+python plot1.py
+```
+
+No segundo terminal:
+
+```bash
+python plot1.py
 ```
 
 

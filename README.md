@@ -75,7 +75,7 @@ Após compilar o código, execute o programa para calcular o n-ésimo termo da s
 ./fibonacci_melhorado
 ```
 
-#### Visualização dos Resultados
+### Visualização dos Resultados
 
 Para visualizar os resultados de desempenho, você pode plotar um gráfico usando Python e Matplotlib.
 
@@ -85,7 +85,7 @@ Instale o Pandas e Matplotlib:
 pip install pandas matplotlib
 ```
 
-Execute o script Python para plotar o gráfico:
+#### Execute o script Python para plotar o gráfico:
 
 ```bash
 python plot.py

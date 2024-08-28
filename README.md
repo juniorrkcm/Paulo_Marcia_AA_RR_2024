@@ -65,7 +65,7 @@ Após compilar o código, execute o programa para calcular o n-ésimo termo da s
 ./fibonacci
 ```
 
-O programa solicitará que você insira o número do termo. Digite um número e pressione Enter.
+O programa executará 5 entradas específicas determinadas no código.
 
 ##### Executando o Algoritmo de Dividir para Conquistar
 
@@ -74,6 +74,9 @@ Após compilar o código, execute o programa para calcular o n-ésimo termo da s
 ```bash
 ./fibonacci_melhorado
 ```
+
+### Arquivos csv
+Ambos os algoritmos não só medem o tempo de execução, mas também salvam os resultados da sequência de Fibonacci para cada entrada em arquivos CSV separados. Isso permite uma análise mais detalhada dos resultados e do desempenho.
 
 ### Visualização dos Resultados
 

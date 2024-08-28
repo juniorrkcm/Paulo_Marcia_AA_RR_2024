@@ -5,7 +5,7 @@
 void multiply_matrices(mpz_t F[2][2], mpz_t M[2][2]) {
     mpz_t a, b, c, d;
     mpz_init(a); mpz_init(b); mpz_init(c); mpz_init(d);
-
+    
     mpz_mul(a, F[0][0], M[0][0]);
     mpz_addmul(a, F[0][1], M[1][0]);
 
@@ -69,10 +69,12 @@ void fibonacci(mpz_t result, int n) {
 }
 
 int main() {
-    FILE *fp = fopen("fibonacci_times_matrix.csv", "w");  // Arquivo para salvar os resultados
-    fprintf(fp, "Terms,ExecutionTime\n");
+    FILE *fp_time = fopen("fibonacci_times_matrix.csv", "w");  // Arquivo para salvar os tempos de execução
+    FILE *fp_result = fopen("fibonacci_results_matrix.csv", "w");  // Arquivo para salvar os resultados do Fibonacci
+    fprintf(fp_time, "Terms,ExecutionTime\n");
+    fprintf(fp_result, "Terms,FibonacciResult\n");
 
-    int terms[] = {50000,100000, 500000, 1000000, 2000000};  // Tamanhos de entrada específicos
+    int terms[] = {100000, 500000, 1000000, 1500000, 2000000};  // Tamanhos de entrada específicos
     int numTests = 5;  // Número de entradas
 
     for (int test = 0; test < numTests; test++) {
@@ -89,11 +91,13 @@ int main() {
 
         cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-        fprintf(fp, "%d,%f\n", n, cpu_time_used);  // Salva os resultados no arquivo
+        fprintf(fp_time, "%d,%f\n", n, cpu_time_used);  // Salva os tempos de execução no arquivo
+        gmp_fprintf(fp_result, "%d,%Zd\n", n, result);  // Salva os resultados do Fibonacci no arquivo
 
         mpz_clear(result);
     }
 
-    fclose(fp);
+    fclose(fp_time);
+    fclose(fp_result);
     return 0;
 }

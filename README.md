@@ -88,7 +88,7 @@ Instale o Pandas e Matplotlib:
 pip install pandas matplotlib
 ```
 
-#### Abra dois terminais e execute os scripts em Python para plotar o gráficos:
+#### Abra três terminais e execute os scripts em Python para plotar o gráficos:
 
 No primeiro terminal:
 
@@ -102,7 +102,11 @@ No segundo terminal:
 python plot2.py
 ```
 
+No terceiro terminal:
 
+```bash
+python interativeVSmatrix_plot.py
+```
 
 
 

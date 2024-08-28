@@ -3,10 +3,12 @@
 #include <time.h>
 
 int main() {
-    FILE *fp = fopen("fibonacci_times.csv", "w");  // Arquivo para salvar os resultados
-    fprintf(fp, "Terms,ExecutionTime\n");
+    FILE *fp_time = fopen("fibonacci_times_interativo.csv", "w");  // Arquivo para salvar os tempos de execução
+    FILE *fp_result = fopen("fibonacci_results_interativo.csv", "w");  // Arquivo para salvar os resultados do Fibonacci
+    fprintf(fp_time, "Terms,ExecutionTime\n");
+    fprintf(fp_result, "Terms,FibonacciResult\n");
 
-    int terms[] = {50000, 100000, 500000, 1000000, 2000000};  // Tamanhos de entrada específicos
+    int terms[] = {100000, 500000, 1000000, 1500000, 2000000};  // Tamanhos de entrada específicos
     int numTests = 5;  // Número de entradas
 
     for (int test = 0; test < numTests; test++) {
@@ -36,7 +38,8 @@ int main() {
         end = clock();
         cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-        fprintf(fp, "%d,%f\n", n, cpu_time_used);  // Salva os resultados no arquivo
+        fprintf(fp_time, "%d,%f\n", n, cpu_time_used);  // Salva os tempos de execução no arquivo
+        gmp_fprintf(fp_result, "%d,%Zd\n", n, nextTerm);  // Salva os resultados do Fibonacci no arquivo
 
         // Limpeza das variáveis GMP
         mpz_clear(t1);
@@ -45,6 +48,7 @@ int main() {
         mpz_clear(sum);
     }
 
-    fclose(fp);
+    fclose(fp_time);
+    fclose(fp_result);
     return 0;
 }

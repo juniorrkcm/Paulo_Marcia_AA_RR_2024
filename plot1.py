@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Leia os dados do arquivo CSV
-data = pd.read_csv('fibonacci_times.csv')
+# Leia os dados do arquivo CSVa
+data = pd.read_csv('fibonacci_times_interativo.csv')
 
 # Converta a coluna 'Terms' para um tipo de dado inteiro
 data['Terms'] = data['Terms'].astype(int)
@@ -17,13 +17,3 @@ plt.grid(True)
 
 # Exibe o gráfico
 plt.show()
-
-
-
-
-
-
-
-
-
-
